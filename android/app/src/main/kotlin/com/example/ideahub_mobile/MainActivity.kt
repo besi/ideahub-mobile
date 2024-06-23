@@ -1,4 +1,4 @@
-package com.example.ideahub_mobile
+package ch.b-labs.ideahub_mobile
 
 import io.flutter.embedding.android.FlutterActivity
 
