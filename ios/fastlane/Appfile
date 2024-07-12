@@ -1,4 +1,4 @@
-app_identifier("ch.b-labs.ideahub-mobile") # The bundle identifier of your app
+app_identifier("ch.b-labs.ideahub") # The bundle identifier of your app
 apple_id("beat.besmer@gmail.com") # Your Apple email address
 
 itc_team_id("355729") # App Store Connect Team ID
