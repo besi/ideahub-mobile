@@ -1,0 +1,39 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+
+  desc "Submit a new Beta Build to Apple TestFlight"
+  desc "This will also make sure the profile is up to date"
+  lane :beta do
+    # snapshot
+    increment_build_number
+
+    commit_version_bump(
+      message: "Version Bump",
+      xcodeproj: "../ios/Runner.xcodeproj"
+    )
+    
+    cert(team_id: '28SPCZ6ASA')
+    sigh
+    ENV["PROFILE_UDID"] = lane_context[SharedValues::SIGH_UDID]
+    gym(scheme: "Runner",  workspace: 'Runner.xcworkspace', export_xcargs: "-allowProvisioningUpdates")
+    pilot
+  end
+  
+end
+
