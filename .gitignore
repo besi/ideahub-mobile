@@ -44,3 +44,6 @@ app.*.map.json
 /ios/fastlane/report.xml
 *.cer
 *.mobileprovision
+/ios/.env
+/ios/App.app.dSYM.zip
+/ios/App.ipa
