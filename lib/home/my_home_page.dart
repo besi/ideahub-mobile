@@ -25,17 +25,18 @@ class MyHomePage extends ConsumerWidget {
                     final idea = ideaList[index];
                     return Card(
                       color: Colors.blue,
-                      elevation: 4,
-                      margin: const EdgeInsets.symmetric(vertical: 10),
                       child: ListTile(
                         title: Text(
-                          '#${idea.id} ${idea.icon} ${idea.title}',
-                          style: const TextStyle(color: Colors.white),
+                          '${idea.icon} ${idea.title}',
                         ),
                         subtitle: Text(idea.createdAt,
-                            style: const TextStyle(color: Colors.white)),
-                        trailing: CircleAvatar(
-                          backgroundImage: NetworkImage((idea.logoURL ?? '')),
+                            style: const TextStyle(color: Colors.black38)),
+                        leading: CircleAvatar(
+                          backgroundImage: NetworkImage(idea.logoURL ?? ''),
+                        ),
+                        trailing: Text(
+                          '#${idea.id}',
+                          style: const TextStyle(fontSize: 20),
                         ),
                       ),
                     );
