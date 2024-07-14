@@ -47,3 +47,5 @@ app.*.map.json
 /ios/.env
 /ios/App.app.dSYM.zip
 /ios/App.ipa
+*.certSigningRequest
+*.p12
