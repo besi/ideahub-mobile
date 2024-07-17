@@ -49,3 +49,5 @@ app.*.map.json
 /ios/App.ipa
 *.certSigningRequest
 *.p12
+*.ipa
+Runner.app.dSYM.zip
